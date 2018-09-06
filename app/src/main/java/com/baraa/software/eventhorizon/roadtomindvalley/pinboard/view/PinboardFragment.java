@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -41,6 +42,8 @@ public class PinboardFragment extends Fragment implements PinboardFragmentMVP.Vi
     @BindView(R.id.progressbarMain) ProgressBar progressbarMain;
     @BindView(R.id.progressbar) ProgressBar progressbarList;
     @BindView(R.id.fab) FloatingActionButton fab;
+    @BindView(R.id.swipeRefresh) SwipeRefreshLayout swipeRefreshLayout;
+
 
     View view;
     GridLayoutManager layoutManager;
@@ -110,9 +113,23 @@ public class PinboardFragment extends Fragment implements PinboardFragmentMVP.Vi
                 mPresenter.loadData(page);
             }
         };
-
         recyclerView.addOnScrollListener(endlessRecyclerViewScrollListener);
+
+        // pull to refresh
+        swipeRefreshLayout.setColorSchemeColors(getResources().getIntArray(R.array.progress_bar_colors));
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                endlessRecyclerViewScrollListener.resetState();
+                pinsViewModelList.clear();
+                adapter.notifyDataSetChanged();
+                mPresenter.restartLoading();
+            }
+        });
+
+
     }
+
 
     @Override
     public void onResume() {
@@ -190,11 +207,17 @@ public class PinboardFragment extends Fragment implements PinboardFragmentMVP.Vi
     }
 
     @Override
+    public void hideSwipeToRefreshAnimation() {
+        swipeRefreshLayout.setRefreshing(false);
+    }
+
+    @Override
     public void onClick(View view) {
         int id = view.getId();
         if(id == R.id.fab){
             endlessRecyclerViewScrollListener.resetState();
             pinsViewModelList.clear();
+            adapter.notifyDataSetChanged();
             mPresenter.restartLoading();
         }
     }

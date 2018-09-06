@@ -77,7 +77,7 @@ public class PinboardPresenterTest {
         verify(mockView).showListLoadginProgressbar();
         verify(mockView).hideListLoadginProgressbar();
         verify(mockView).hideProgressbar();
-        verify(mockView,never()).showSnackbarMessage("Error Loading! check connection");
+        verify(mockView,times(1)).showSnackbarMessage("Error Loading! check connection");
 
     }
 

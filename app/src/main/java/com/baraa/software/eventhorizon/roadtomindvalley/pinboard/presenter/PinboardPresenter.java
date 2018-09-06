@@ -60,12 +60,14 @@ public class PinboardPresenter implements PinboardFragmentMVP.Presenter {
                     public void onCompleted() {
                         view.hideProgressbar();
                         view.hideListLoadginProgressbar();
+                        view.hideSwipeToRefreshAnimation();
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         view.hideProgressbar();
                         view.hideListLoadginProgressbar();
+                        view.hideSwipeToRefreshAnimation();
                         view.showSnackbarMessage("Error Loading! check connection");
                         Log.e(TAG, "onError: ",e );
                     }
@@ -74,6 +76,7 @@ public class PinboardPresenter implements PinboardFragmentMVP.Presenter {
                     public void onNext(PinsViewModel pinsViewModel) {
                         view.hideProgressbar();
                         view.hideListLoadginProgressbar();
+                        view.hideSwipeToRefreshAnimation();
                         view.updateData(pinsViewModel);
                     }
                 });

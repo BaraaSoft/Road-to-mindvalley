@@ -16,6 +16,7 @@ public interface PinboardFragmentMVP {
         void hideProgressbar();
         void showListLoadginProgressbar();
         void hideListLoadginProgressbar();
+        void hideSwipeToRefreshAnimation();
     }
 
     interface Presenter {
