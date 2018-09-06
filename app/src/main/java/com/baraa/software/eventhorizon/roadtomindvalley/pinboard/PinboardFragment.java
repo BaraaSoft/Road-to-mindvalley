@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
 import com.baraa.software.eventhorizon.roadtomindvalley.R;
-import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.repository.PinsViewModel;
 import com.baraa.software.eventhorizon.roadtomindvalley.root.App;
 
 import java.util.ArrayList;
@@ -69,7 +68,7 @@ public class PinboardFragment extends Fragment implements PinboardFragmentMVP.Vi
     }
 
     public void loadMore(){
-        mPresenter.loadData();
+        mPresenter.loadData(0);
     }
 
     @Override
@@ -79,7 +78,7 @@ public class PinboardFragment extends Fragment implements PinboardFragmentMVP.Vi
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(),2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-        mPresenter.loadData();
+        mPresenter.loadData(0);
 
     }
 

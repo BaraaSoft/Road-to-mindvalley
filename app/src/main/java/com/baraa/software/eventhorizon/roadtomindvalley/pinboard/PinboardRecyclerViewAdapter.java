@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.baraa.software.eventhorizon.roadtomindvalley.R;
-import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.repository.PinsViewModel;
 
 import java.util.List;
 

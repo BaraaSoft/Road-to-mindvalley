@@ -4,8 +4,6 @@ import android.graphics.Bitmap;
 
 import com.baraa.software.eventhorizon.roadtomindvalley.https.model.BaseResponse;
 
-import okhttp3.ResponseBody;
-import retrofit2.Response;
 import rx.Observable;
 
 public interface IRepository {
@@ -17,7 +15,7 @@ public interface IRepository {
     Observable<Bitmap> getCachedImages();
     Observable<Bitmap> getImages();
 
-    Observable<Response<ResponseBody>> getFilesFromNetwork();
-    Observable<Response<ResponseBody>> getCachedFiles();
-    Observable<Response<ResponseBody>> getFiles();
+    Observable<byte[]> getFilesFromNetwork();
+    Observable<byte[]> getCachedFiles();
+    Observable<byte[]> getFiles();
 }
