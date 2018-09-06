@@ -11,14 +11,17 @@ public interface PinboardFragmentMVP {
 
         void updateData(PinsViewModel viewModel);
         void showSnackbarMessage(String s);
-        void showProgressbar();
+        void showMainProgressbar();
         void hideProgressbar();
-
+        void showListLoadginProgressbar();
+        void hideListLoadginProgressbar();
     }
 
     interface Presenter {
 
         void loadData(int pageNum);
+
+        void restartLoading();
 
         void rxUnsubscribe();
 

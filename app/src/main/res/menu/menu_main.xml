@@ -2,9 +2,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.baraa.software.eventhorizon.roadtomindvalley.MainActivity">
+    <item android:title="view list"
+        android:id="@+id/mnuViewList"
+        android:icon="@drawable/ic_view_list_white_24dp"
+        app:showAsAction="always"/>
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:title="view grid"
+        android:id="@+id/mnuViewGrid"
+        android:icon="@drawable/ic_view_module_white_24dp"
+        app:showAsAction="always"/>
+
 </menu>

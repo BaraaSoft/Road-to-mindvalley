@@ -67,4 +67,5 @@ dependencies {
     implementation "com.android.support:cardview-v7:$supportLibraryVersion"
     //other
     api 'com.google.guava:guava:26.0-android'
+    implementation 'com.jpardogo.googleprogressbar:library:1.2.0'
 }
