@@ -1,4 +1,4 @@
-package com.baraa.software.eventhorizon.roadtomindvalley.pinboard;
+package com.baraa.software.eventhorizon.roadtomindvalley.pinboard.view;
 
 
 import android.os.Bundle;
@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
 import com.baraa.software.eventhorizon.roadtomindvalley.R;
+import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.PinboardFragmentMVP;
+import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.model.PinsViewModel;
 import com.baraa.software.eventhorizon.roadtomindvalley.root.App;
 import com.jpardogo.android.googleprogressbar.library.ChromeFloatingCirclesDrawable;
 
@@ -100,6 +102,8 @@ public class PinboardFragment extends Fragment implements PinboardFragmentMVP.Vi
 
         fab.setOnClickListener(this);
 
+
+        // load new item on scrolling
         endlessRecyclerViewScrollListener = new EndlessRecyclerViewScrollListener(layoutManager) {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {

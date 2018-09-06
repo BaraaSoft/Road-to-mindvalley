@@ -1,6 +1,9 @@
-package com.baraa.software.eventhorizon.roadtomindvalley.pinboard;
+package com.baraa.software.eventhorizon.roadtomindvalley.pinboard.presenter;
 
 import android.util.Log;
+
+import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.PinboardFragmentMVP;
+import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.model.PinsViewModel;
 
 import rx.Subscriber;
 import rx.Subscription;

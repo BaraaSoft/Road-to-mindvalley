@@ -1,4 +1,4 @@
-package com.baraa.software.eventhorizon.roadtomindvalley.pinboard;
+package com.baraa.software.eventhorizon.roadtomindvalley.pinboard.model;
 
 import android.graphics.Bitmap;
 

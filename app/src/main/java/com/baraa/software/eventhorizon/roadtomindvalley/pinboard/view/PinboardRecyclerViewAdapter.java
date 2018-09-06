@@ -1,4 +1,4 @@
-package com.baraa.software.eventhorizon.roadtomindvalley.pinboard;
+package com.baraa.software.eventhorizon.roadtomindvalley.pinboard.view;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.baraa.software.eventhorizon.roadtomindvalley.R;
+import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.model.PinsViewModel;
 
 import java.util.List;
 

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.PinboardFragment;
+import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.view.PinboardFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

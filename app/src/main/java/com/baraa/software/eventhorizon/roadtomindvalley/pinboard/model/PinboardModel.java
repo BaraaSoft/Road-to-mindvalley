@@ -1,8 +1,9 @@
-package com.baraa.software.eventhorizon.roadtomindvalley.pinboard;
+package com.baraa.software.eventhorizon.roadtomindvalley.pinboard.model;
 
 import android.graphics.Bitmap;
 
 import com.baraa.software.eventhorizon.roadtomindvalley.https.model.BaseResponse;
+import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.PinboardFragmentMVP;
 import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.repository.IRepository;
 
 import rx.Observable;

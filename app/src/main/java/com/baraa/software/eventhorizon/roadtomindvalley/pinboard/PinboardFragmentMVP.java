@@ -3,6 +3,7 @@ package com.baraa.software.eventhorizon.roadtomindvalley.pinboard;
 import android.graphics.Bitmap;
 
 import com.baraa.software.eventhorizon.roadtomindvalley.https.model.BaseResponse;
+import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.model.PinsViewModel;
 
 import rx.Observable;
 

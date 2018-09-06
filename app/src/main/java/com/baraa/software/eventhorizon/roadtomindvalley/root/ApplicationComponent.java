@@ -2,7 +2,7 @@ package com.baraa.software.eventhorizon.roadtomindvalley.root;
 
 import com.baraa.software.eventhorizon.roadtomindvalley.https.module.FileApiModule;
 import com.baraa.software.eventhorizon.roadtomindvalley.https.module.MediaApiModule;
-import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.PinboardFragment;
+import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.view.PinboardFragment;
 import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.PinboardModule;
 
 import javax.inject.Singleton;
