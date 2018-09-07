@@ -13,7 +13,7 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class PinboardModule  {
+public class PinboardModule {
     @Provides
     public PinboardFragmentMVP.Presenter providesPinboardMVPPresenter(PinboardFragmentMVP.Model model){
         return new PinboardPresenter(model);

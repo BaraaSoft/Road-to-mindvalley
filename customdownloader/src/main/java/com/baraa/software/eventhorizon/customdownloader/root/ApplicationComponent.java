@@ -1,16 +1,16 @@
 package com.baraa.software.eventhorizon.customdownloader.root;
 
-import com.baraa.software.eventhorizon.roadtomindvalley.https.module.FileApiModule;
-import com.baraa.software.eventhorizon.roadtomindvalley.https.module.MediaApiModule;
-import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.PinboardModule;
-import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.view.PinboardFragment;
+
+import com.baraa.software.eventhorizon.customdownloader.core.ValleyDownloadService;
+import com.baraa.software.eventhorizon.customdownloader.https.module.FileApiModule;
+import com.baraa.software.eventhorizon.customdownloader.https.module.MediaApiModule;
 
 import javax.inject.Singleton;
 
 import dagger.Component;
 
 @Singleton
-@Component(modules = {ApplicationModule.class, MediaApiModule.class, FileApiModule.class, PinboardModule.class})
+@Component(modules = {ApplicationModule.class, MediaApiModule.class, FileApiModule.class})
 public interface ApplicationComponent {
-    void inject(PinboardFragment pinboardFragment);
+    void inject(ValleyDownloadService valleyDownloader);
 }

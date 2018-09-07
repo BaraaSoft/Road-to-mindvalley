@@ -2,9 +2,8 @@ package com.baraa.software.eventhorizon.customdownloader.root;
 
 import android.app.Application;
 
-import com.baraa.software.eventhorizon.roadtomindvalley.https.module.FileApiModule;
-import com.baraa.software.eventhorizon.roadtomindvalley.https.module.MediaApiModule;
-import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.PinboardModule;
+import com.baraa.software.eventhorizon.customdownloader.https.module.FileApiModule;
+import com.baraa.software.eventhorizon.customdownloader.https.module.MediaApiModule;
 
 public class App extends Application {
     ApplicationComponent component;
@@ -16,7 +15,6 @@ public class App extends Application {
                 .applicationModule(new ApplicationModule(this))
                 .mediaApiModule(new MediaApiModule())
                 .fileApiModule(new FileApiModule())
-                .pinboardModule(new PinboardModule())
                 .build();
     }
 

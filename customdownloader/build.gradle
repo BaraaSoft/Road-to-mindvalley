@@ -23,13 +23,50 @@ android {
         }
     }
 
+    android {
+        // Configure only for each module that uses Java 8
+        // language features (either in its source code or
+        // through dependencies).
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+        testOptions {
+            unitTests.returnDefaultValues = true
+        }
+    }
+
+}
+
+ext {
+    retrofitVersion = '2.0.2'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //rest interactions
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    //JSON Parsing
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation 'com.google.code.gson:gson:2.8.0'
+    //http logging
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    //Dagger
+    implementation 'com.google.dagger:dagger:2.15'
+    implementation 'com.google.dagger:dagger-android:2.15'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.15'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
+    //RxJava
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'io.reactivex:rxjava:1.2.6'
+    implementation "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion"
+    //other
+    api 'com.google.guava:guava:26.0-android'
 }

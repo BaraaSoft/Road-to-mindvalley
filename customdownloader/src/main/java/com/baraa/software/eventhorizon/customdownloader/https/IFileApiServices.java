@@ -13,7 +13,7 @@ public interface IFileApiServices {
     @Streaming
     @GET
     Observable<Response<ResponseBody>> getfile(@Url String url);
-    @Streaming
+
     @GET
     Observable<Bitmap> getImage(@Url String url);
 

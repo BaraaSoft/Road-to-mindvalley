@@ -1,6 +1,8 @@
 package com.baraa.software.eventhorizon.customdownloader.https.module;
 
-import com.baraa.software.eventhorizon.roadtomindvalley.https.IFileApiServices;
+
+
+import com.baraa.software.eventhorizon.customdownloader.https.IFileApiServices;
 
 import java.io.IOException;
 
@@ -19,7 +21,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @Module
 public class FileApiModule {
     public final String BASE_URL = "https://images.unsplash.com/";
-
 
     @Provides
     public OkHttpClient providesHttpClient(){

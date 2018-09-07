@@ -1,6 +1,6 @@
 package com.baraa.software.eventhorizon.customdownloader.https.module;
 
-import com.baraa.software.eventhorizon.roadtomindvalley.https.IMediaApiServices;
+import com.baraa.software.eventhorizon.customdownloader.https.IMediaJsonApiServices;
 
 import java.io.IOException;
 
@@ -48,7 +48,7 @@ public class MediaApiModule {
     }
 
     @Provides
-    public IMediaApiServices providesBookSearchService(){
-        return providesRetrofit(BASE_URL,providesHttpClient()).create(IMediaApiServices.class);
+    public IMediaJsonApiServices providesBookSearchService(){
+        return providesRetrofit(BASE_URL,providesHttpClient()).create(IMediaJsonApiServices.class);
     }
 }
