@@ -1,1 +1,1 @@
-include ':app', ':customdownloader'
+include ':app', ':customdownloader', ':valleydownloader'

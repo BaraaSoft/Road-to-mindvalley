@@ -7,6 +7,7 @@ import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.model.PinsViewM
 
 import rx.Observable;
 
+
 public interface PinboardFragmentMVP {
     interface View {
 
@@ -32,9 +33,9 @@ public interface PinboardFragmentMVP {
     }
 
     interface Model {
-        Observable<BaseResponse> getMediaInfo();
-        Observable<Bitmap> getImages();
-        Observable<byte[]>getFiles();
-        Observable<PinsViewModel> fetch();
+        Observable<BaseResponse> getMediaInfo(String baseJsonUrl);
+        Observable<Bitmap> getImages(String baseJsonUrl);
+        Observable<byte[]>getFiles(String baseJsonUrl);
+        Observable<PinsViewModel> fetch(String baseJsonUrl);
     }
 }

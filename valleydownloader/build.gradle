@@ -1,21 +1,27 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 27
+
+
+
     defaultConfig {
-        applicationId "com.baraa.software.eventhorizon.roadtomindvalley"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     android {
         // Configure only for each module that uses Java 8
         // language features (either in its source code or
@@ -28,19 +34,18 @@ android {
             unitTests.returnDefaultValues = true
         }
     }
-}
 
+}
 ext {
-    supportLibraryVersion = '27.1.1'
     retrofitVersion = '2.0.2'
 }
 
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:support-v4:27.1.1'
+
+    implementation 'com.android.support:appcompat-v7:27.1.1'
     testImplementation 'junit:junit:4.12'
-    testImplementation 'org.mockito:mockito-core:2.21.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
@@ -60,18 +65,6 @@ dependencies {
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation 'io.reactivex:rxjava:1.2.6'
     implementation "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion"
-    // butterKnife
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
-    //android support
-    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
-    implementation "com.android.support:recyclerview-v7:$supportLibraryVersion"
-    implementation "com.android.support:design:$supportLibraryVersion"
-    implementation "com.android.support:cardview-v7:$supportLibraryVersion"
     //other
     api 'com.google.guava:guava:26.0-android'
-    implementation 'com.jpardogo.googleprogressbar:library:1.2.0'
-
-
 }

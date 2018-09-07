@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/customdownloader" />
+            <option value="$PROJECT_DIR$/valleydownloader" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

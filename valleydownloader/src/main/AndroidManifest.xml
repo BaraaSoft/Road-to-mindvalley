@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.baraa.software.eventhorizon.valleydownloader">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:name=".root.App"
+        tools:replace="name"
+        android:allowBackup="true"
+        android:supportsRtl="true">
+
+    </application>
+</manifest>
