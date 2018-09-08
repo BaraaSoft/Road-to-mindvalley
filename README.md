@@ -82,7 +82,7 @@ Observable<Bitmap> getImage(String imageUrl);
 
 
 
-##### You could inject ValleyDownloadService dependencies as below
+##### if you are using Dagger You could just inject ValleyDownloadService dependencies as below
 
 ```java
 @Provides
