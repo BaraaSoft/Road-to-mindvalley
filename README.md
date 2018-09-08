@@ -27,6 +27,9 @@ component = DaggerApplicationComponent.builder()
 ##### `IDownloadService` interface.  
 
 ```java
+
+/************** IDownloadService interface ****************/
+
 /** Get  json data from network **/
 Observable<BaseResponse> getMediaFromNetwork(String baseJsonUrl);
 /** Get cached json data in the memory **/
@@ -56,7 +59,7 @@ Observable<byte[]> getCachedFiles();
 * if last fetch happen more than 20sec ago fetch new data from a network **/
 Observable<byte[]> getFiles(String baseJsonUrl);
 
-/************** IDownloadService ****************/
+
 
 /** get a single file from given url **/
 Observable<byte[]> getFileFromNetwork(String fileUrl);
@@ -79,7 +82,7 @@ Observable<Bitmap> getImage(String imageUrl);
 
 
 
-#####You could inject ValleyDownloadService dependencies as below
+##### You could inject ValleyDownloadService dependencies as below
 
 ```java
 @Provides
