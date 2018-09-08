@@ -1,11 +1,13 @@
 package com.baraa.software.eventhorizon.roadtomindvalley.pinboard;
 
-import com.baraa.software.eventhorizon.roadtomindvalley.https.IFileApiServices;
-import com.baraa.software.eventhorizon.roadtomindvalley.https.IMediaApiServices;
+
+
 import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.model.PinboardModel;
 import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.presenter.PinboardPresenter;
-import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.repository.IRepository;
-import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.repository.Repository;
+import com.baraa.software.eventhorizon.valleydownloader.core.IDownloadService;
+import com.baraa.software.eventhorizon.valleydownloader.core.ValleyDownloadService;
+import com.baraa.software.eventhorizon.valleydownloader.https.IFileApiServices;
+import com.baraa.software.eventhorizon.valleydownloader.https.IMediaJsonApiServices;
 
 import javax.inject.Singleton;
 
@@ -21,13 +23,15 @@ public class PinboardModule {
 
 
     @Provides
-    public PinboardFragmentMVP.Model providesPinboardMVPModel(IRepository repository){
-        return new PinboardModel(repository);
+    public PinboardFragmentMVP.Model providesPinboardMVPModel(IDownloadService valleyDownloadService){
+        return new PinboardModel(valleyDownloadService);
     }
+
 
     @Provides
     @Singleton
-    public IRepository providesPinboardMVPRepository(IMediaApiServices mediaApiServices, IFileApiServices fileApiServices){
-        return new Repository(mediaApiServices,fileApiServices);
+    public IDownloadService providesValleyDownloadServices(IMediaJsonApiServices mediaJsonApiServices, IFileApiServices fileApiServices){
+        return new ValleyDownloadService(fileApiServices,mediaJsonApiServices);
     }
+
 }

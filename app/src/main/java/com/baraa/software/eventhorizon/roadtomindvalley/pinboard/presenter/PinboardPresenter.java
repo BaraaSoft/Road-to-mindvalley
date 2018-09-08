@@ -15,9 +15,16 @@ public class PinboardPresenter implements PinboardFragmentMVP.Presenter {
     PinboardFragmentMVP.Model model;
     PinboardFragmentMVP.View view;
     Subscription subscription;
+    String baseUrl;
 
     public PinboardPresenter(PinboardFragmentMVP.Model model) {
         this.model = model;
+    }
+
+
+    @Override
+    public void setBaseUrl(String url) {
+        baseUrl = url;
     }
 
     @Override
@@ -25,7 +32,7 @@ public class PinboardPresenter implements PinboardFragmentMVP.Presenter {
         int from = pageNum * 10;
         if(pageNum == 0) view.showMainProgressbar();
         else view.showListLoadginProgressbar();
-        subscription = model.fetch().skip(from).take(10).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+        subscription = model.fetch(baseUrl).skip(from).take(10).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<PinsViewModel>() {
                     @Override
                     public void onCompleted() {
@@ -54,7 +61,7 @@ public class PinboardPresenter implements PinboardFragmentMVP.Presenter {
     public void restartLoading() {
         if(subscription != null) subscription.unsubscribe();
         view.showMainProgressbar();
-        subscription = model.fetch().skip(0).take(10).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+        subscription = model.fetch(baseUrl).skip(0).take(10).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<PinsViewModel>() {
                     @Override
                     public void onCompleted() {

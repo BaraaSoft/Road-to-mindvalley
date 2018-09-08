@@ -36,6 +36,7 @@ import butterknife.Unbinder;
 
 public class PinboardFragment extends Fragment implements PinboardFragmentMVP.View,View.OnClickListener {
     private static final String TAG = "PinboardFragment";
+    public static final String BASE_URL = "http://pastebin.com/raw/wgkJgazE";
 
     Unbinder unbinder;
     @BindView(R.id.recyclerView) RecyclerView recyclerView;
@@ -51,6 +52,7 @@ public class PinboardFragment extends Fragment implements PinboardFragmentMVP.Vi
     List<PinsViewModel> pinsViewModelList = new ArrayList<>();
     // Endless scroll
     EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener;
+
 
     @Inject
     PinboardFragmentMVP.Presenter mPresenter;
@@ -71,7 +73,7 @@ public class PinboardFragment extends Fragment implements PinboardFragmentMVP.Vi
         super.onCreate(savedInstanceState);
         ((App)getActivity().getApplication()).getApplicationComponent().inject(this);
         mPresenter.setView(this);
-
+        mPresenter.setBaseUrl(BASE_URL);
     }
 
     @Override

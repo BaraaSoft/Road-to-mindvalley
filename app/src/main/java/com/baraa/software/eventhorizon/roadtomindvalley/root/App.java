@@ -2,8 +2,8 @@ package com.baraa.software.eventhorizon.roadtomindvalley.root;
 
 import android.app.Application;
 
-import com.baraa.software.eventhorizon.roadtomindvalley.https.module.FileApiModule;
-import com.baraa.software.eventhorizon.roadtomindvalley.https.module.MediaApiModule;
+import com.baraa.software.eventhorizon.valleydownloader.https.module.FileApiModule;
+import com.baraa.software.eventhorizon.valleydownloader.https.module.MediaApiModule;
 import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.PinboardModule;
 
 public class App extends Application {

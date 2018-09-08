@@ -2,8 +2,8 @@ package com.baraa.software.eventhorizon.roadtomindvalley.pinboard;
 
 import android.graphics.Bitmap;
 
-import com.baraa.software.eventhorizon.roadtomindvalley.https.model.BaseResponse;
 import com.baraa.software.eventhorizon.roadtomindvalley.pinboard.model.PinsViewModel;
+import com.baraa.software.eventhorizon.valleydownloader.https.model.BaseResponse;
 
 import rx.Observable;
 
@@ -22,6 +22,8 @@ public interface PinboardFragmentMVP {
 
     interface Presenter {
 
+        void setBaseUrl(String url);
+
         void loadData(int pageNum);
 
         void restartLoading();
@@ -33,6 +35,9 @@ public interface PinboardFragmentMVP {
     }
 
     interface Model {
+        Observable<Bitmap> getSingleImage(String url);
+        Observable<byte[]> getSingleFile(String url);
+
         Observable<BaseResponse> getMediaInfo(String baseJsonUrl);
         Observable<Bitmap> getImages(String baseJsonUrl);
         Observable<byte[]>getFiles(String baseJsonUrl);
