@@ -6,7 +6,10 @@ Furthermore, this project also contains my library (ValleyDownloader Library) to
 For more details about why I choose MVP clean architecture  over other design architecture, feel free to check out my [blog artical about MVP](https://baraabytes.com/why-you-should-use-mvp-clean-architecture-in-your-next-android-project/ "blog artical about MVP")
 
 ## ValleyDownloader Library
-It is For downloading image and file. it developed to be easily integrated with RxJava as well as Dagger if you are using it as your dependency injection.
+It is For downloading image and file. it is developed to be easily integrated with RxJava as well as Dagger if you are using it as your dependency injection. And with it's caching functionality it could be a good replacement for the famous android Library Picasso. Hopefully Lol ... 
+
+You could download it from Here ([Download Link](http://baraabytes.com/valleydownloader-debug-aar/ "Download Link")) 
+However, the source code is already included in the project.
 
 ##### The library's Built-in Dagger Module for getting  and parsing JSON file from the endpoint  http://pastebin.com/raw/wgkJgazE
 `MediaApiModule.class`
